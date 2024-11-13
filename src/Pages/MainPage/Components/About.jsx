@@ -12,6 +12,7 @@ const AboutSection = () => {
               At Mind Med, our mission is to empower individuals with the tools and support they need to manage their mental health and well-being. We use AI-driven solutions to offer personalized guidance for overcoming anxiety, depression, and stress.
             </p>
           </div>
+          
           <div className="p-6 bg-white rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Our Vision</h3>
             <p className="text-gray-600">
