@@ -1,0 +1,57 @@
+
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+const Home = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const username = location.state?.username || 'User';
+
+  return (
+    <div className="p-6 flex h-screen">
+      {/* Left Panel: User Info */}
+      <div className="w-2/3">
+        <h1 className="text-4xl font-bold mb-4">Welcome, {username}!</h1>
+        <p className="text-lg mb-6">You have successfully logged in.</p>
+
+        {/* Image below the greeting text with margin-left and increased size */}
+        <div className="mt-6">
+          <img
+            src="src\Pages\MainPage\Components\home-removebg-preview.png"  // Replace with your desired image URL
+            alt="Greeting Image"
+            className="ml-40 mt-37 w-full max-w-[800px] h-auto rounded-lg"  // Adjust image size and left margin
+          />
+        </div>
+      </div>
+
+      {/* Right Panel: Chatbot with top margin */}
+      <div className="w-1/3 mt-20 mr-40">
+        <div className="border rounded-lg overflow-hidden" style={{ height: '100%', borderRadius: '0.5rem' }}>
+          <iframe
+            src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/13/08/20241113082403-5FILM8N2.json"
+            style={{
+              width: '100%',
+              height: '110%',
+              border: 'none',
+              borderRadius: '0.5rem',
+              marginTop: '-1rem',  // Shift up by 1rem to crop top part
+            }}
+            title="BotPress Chat"
+          ></iframe>
+        </div>
+      </div>
+
+      {/* Floating logout button moved to top-right */}
+      <button
+        onClick={() => navigate('/')}
+        className="absolute top-6 right-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg"
+      >
+        Logout
+      </button>
+    </div>
+  );
+};
+
+export default Home;
+
+
